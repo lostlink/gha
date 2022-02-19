@@ -18,11 +18,17 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Cache dependencies
+      - name: Cache Composer dependencies
         uses: actions/cache@v2
         with:
           path: ~/.composer/cache/files
           key: dependencies-composer-${{ hashFiles('composer.lock') }}
+
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: dependencies-node-${{ hashFiles('**/package-lock.json') }}
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
