@@ -22,7 +22,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.composer/cache/files
-          key: dependencies-composer-${{ hashFiles('composer.lock') }}
+          key: dependencies-composer-${{ hashFiles('**/composer.lock') }}
 
       - name: Cache NPM dependencies
         uses: actions/cache@v2
