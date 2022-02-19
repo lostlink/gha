@@ -22,7 +22,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.composer/cache/files
-          key: dependencies-composer-${{ hashFiles('composer.json') }}
+          key: dependencies-composer-${{ hashFiles('composer.lock') }}
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
