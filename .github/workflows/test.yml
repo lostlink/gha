@@ -17,6 +17,9 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
+        with:
+          lfs: true
+          submodules: recursive
 
       - name: Setup Node
         uses: actions/setup-node@v2
